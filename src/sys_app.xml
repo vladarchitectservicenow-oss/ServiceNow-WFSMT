@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (C) 2026 Vladimir Kapustin
+  SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+<unload unload_date="2026-05-16 00:00:00">
+  <sys_app action="INSERT_OR_UPDATE">
+    <name>ServiceNow Workflow Studio Migration Tracker</name>
+    <scope>x_wfsmt</scope>
+    <version>1.0.0</version>
+    <vendor>Vladimir Kapustin (vladarchitect)</vendor>
+    <description>
+      Maps Legacy Workflow, Flow Designer, and Workflow Studio flows across the
+      Zurich to Australia upgrade. Generates migration reports, .now.ts DSL
+      templates, and tracks migration velocity per application/team.
+    </description>
+    <license>AGPL-3.0-only</license>
+    <active>true</active>
+    <enforce_license>log</enforce_license>
+    <js_level>helsinki_es5</js_level>
+    <owner>Vladimir Kapustin</owner>
+    <restrict_table_access>false</restrict_table_access>
+    <runtime_access_tracking>permissive</runtime_access_tracking>
+    <short_description>Workflow migration tracker for Australia</short_description>
+  </sys_app>
+</unload>

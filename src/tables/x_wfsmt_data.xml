@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2026 Vladimir Kapustin — AGPL-3.0 -->
+<unload unload_date="2026-05-16">
+
+<x_wfsmt_scan_run action="INSERT_OR_UPDATE">
+  <sys_id>wfsmt_run_0000000001</sys_id>
+  <scan_type>full</scan_type>
+  <scope>global</scope>
+  <state>Completed</state>
+  <findings_count>3</findings_count>
+  <skipped_count>0</skipped_count>
+  <execution_time_ms>1200</execution_time_ms>
+    <sys_scope>x_wfsmt</sys_scope>
+</x_wfsmt_scan_run>
+
+<x_wfsmt_finding action="INSERT_OR_UPDATE">
+  <sys_id>wfsmt_find_0000000001</sys_id>
+  <scan_run_ref>wfsmt_run_0000000001</scan_run_ref>
+  <table_name>wf_workflow</table_name>
+  <record_sys_id>LEGACY001</record_sys_id>
+  <record_name>Legacy Incident Workflow</record_name>
+  <generation>Legacy</generation>
+  <active>true</active>
+  <confidence_score>0</confidence_score>
+    <sys_scope>x_wfsmt</sys_scope>
+</x_wfsmt_finding>
+
+<x_wfsmt_finding action="INSERT_OR_UPDATE">
+  <sys_id>wfsmt_find_0000000002</sys_id>
+  <scan_run_ref>wfsmt_run_0000000001</scan_run_ref>
+  <table_name>sys_hub_flow</table_name>
+  <record_sys_id>FLOW001</record_sys_id>
+  <record_name>Incident Auto-Triage Flow</record_name>
+  <generation>Flow Designer</generation>
+  <active>true</active>
+  <confidence_score>0</confidence_score>
+    <sys_scope>x_wfsmt</sys_scope>
+</x_wfsmt_finding>
+
+<x_wfsmt_finding action="INSERT_OR_UPDATE">
+  <sys_id>wfsmt_find_0000000003</sys_id>
+  <scan_run_ref>wfsmt_run_0000000001</scan_run_ref>
+  <table_name>sys_flow_designer</table_name>
+  <record_sys_id>WS001</record_sys_id>
+  <record_name>Incident Resolution Studio</record_name>
+  <generation>Workflow Studio</generation>
+  <active>true</active>
+  <confidence_score>100</confidence_score>
+    <sys_scope>x_wfsmt</sys_scope>
+</x_wfsmt_finding>
+
+<x_wfsmt_migration_map action="INSERT_OR_UPDATE">
+  <sys_id>wfsmt_map_0000000001</sys_id>
+  <source_table>wf_workflow</source_table>
+  <source_record>LEGACY001</source_record>
+  <target_generation>Workflow Studio</target_generation>
+  <mapping_confidence_score>85</mapping_confidence_score>
+  <status>Mapped</status>
+  <now_ts_script><![CDATA[import { workflow, script, decision, approval } from "@servicenow/sdk";
+
+export default workflow({
+  id: "legacy_incident_migration",
+  name: "Legacy Incident Migration",
+  script: { /* Run Script mapped */ },
+  decision: { /* If condition mapped */ },
+  approval: { /* Approval mapped */ }
+});]]></now_ts_script>
+    <sys_scope>x_wfsmt</sys_scope>
+</x_wfsmt_migration_map>
+
+</unload>
