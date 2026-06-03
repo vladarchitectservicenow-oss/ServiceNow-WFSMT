@@ -1,0 +1,10 @@
+DONE — ServiceNow-WFSMT
+Completed: 2026-06-03T14:16:35Z
+Product: Workflow Studio Migration Tracker
+Version: 1.0.0
+License: AGPL-3.0-only
+Author: Vladimir Kapustin
+Phase 1: Architecture, dependencies, risks, execution plan
+Phase 2: 13 test scenarios, 8 regression cases, 10 edge cases, 41-point checklist
+README: 2034 words, 15 sections, Mermaid diagram, ROI analysis
+Git commit: 73818f5 on main
